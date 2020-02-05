@@ -18,5 +18,5 @@ class UploadFileToAzure:
 
 uploadFile = UploadFileToAzure()
 with open('example.jpg', 'rb') as f:
-    img = base64.b64encode(f.read())
+    img = f.read()
 uploadFile.azure_store_image_from_stream('img_name', img)
