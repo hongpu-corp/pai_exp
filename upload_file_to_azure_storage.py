@@ -8,7 +8,7 @@ def upload_res(path, local_path):
     BlockBlobService = connect_azure()
     Container_name = "hong-ai-plat"
     path = BlockBlobService.create_blob_from_bytes(Container_name, path, res)
-    print("Upload success！")
+    print("Upload success!")
     return path
 
 def connect_azure():
