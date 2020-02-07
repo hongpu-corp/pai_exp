@@ -258,10 +258,6 @@ def download_train_res(project, version, path):  #项目 版本 本地保存路�
 
 
 def testDownloadTrainRes():
-    # email = 'sys_admin'
-    # password = 'hongpu'
-    # url = 'http://vi-plat.chinaeast2.cloudapp.chinacloudapi.cn:8000/api/v1/auth/'
-    # headers = login(email, password, url)
     project = '孙可标签测试'
     version = 'v1'
     path = r'C:\Users\86157\Desktop\testlin'
