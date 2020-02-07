@@ -8,7 +8,7 @@ class UploadFileToAzure:
         BlockBlobService = self.connect_azure()
         Container_name = "open-pai"
         BlockBlobService.create_blob_from_path(Container_name,'test/xml/'+xml_name, file_stream)
-        print("Upload success！")
+        print("Upload success!")
         return path
 
     def connect_azure(self):
