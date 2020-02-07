@@ -129,7 +129,7 @@ def testDownloadTrainRes():
     headers = login(email, password, url)
     project = '孙可标签测试'
     version = 'v1'
-    path = r'/Users/sunke/Desktop/test'
+    path = r'./test'
     download_train_res(project, version, path, headers)
 
 testDownloadTrainRes()
