@@ -4,12 +4,11 @@ from azure.storage.blob import BlockBlobService, PublicAccess
 
 def upload_res(path, local_path):
     with open(local_path, 'rb') as f:
-        res = f.read()
-    BlockBlobService = connect_azure()
-    Container_name = "hong-ai-plat"
-    path = BlockBlobService.create_blob_from_bytes(Container_name, path, res)
-    print("Upload success!")
-    return path
+        BlockBlobService = connect_azure()
+        Container_name = "hong-ai-plat"
+        path = BlockBlobService.create_blob_from_stream(Container_name, path, f)
+        print("Upload success!")
+        return path
 
 def connect_azure():
     BlockBlobService = azure.storage.blob.BlockBlobService(account_name='savepicture',
