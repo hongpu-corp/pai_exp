@@ -2,13 +2,13 @@
 import azure
 from azure.storage.blob import BlockBlobService, PublicAccess
 
+# local_path为文件的句柄
 def upload_res(path, local_path):
-    with open(local_path, 'rb') as f:
-        BlockBlobService = connect_azure()
-        Container_name = "hong-ai-plat"
-        path = BlockBlobService.create_blob_from_stream(Container_name, path, f)
-        print("Upload success!")
-        return path
+    BlockBlobService = connect_azure()
+    Container_name = "hong-ai-plat"
+    path = BlockBlobService.create_blob_from_stream(Container_name, path, local_path)
+    print("Upload success!")
+    return path
 
 def connect_azure():
     BlockBlobService = azure.storage.blob.BlockBlobService(account_name='savepicture',
@@ -16,4 +16,5 @@ def connect_azure():
                                                            endpoint_suffix='core.chinacloudapi.cn')
     return BlockBlobService
 
-upload_res('/img/test.jpg', 'example.jpg')
+with open('example.jpg', 'rb') as local_path:
+    upload_res('/img/test.jpg', local_path)
