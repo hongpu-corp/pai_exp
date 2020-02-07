@@ -18,7 +18,7 @@ class UploadFileToAzure:
 
 uploadFile = UploadFileToAzure()
 
-path = r'/Users/sunke/Desktop/image/SpacePC_ALL'
+path = r'./test/img'
 
 piclists = os.listdir(path)
 for pic in piclists:
