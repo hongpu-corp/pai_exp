@@ -19,7 +19,7 @@ class UploadFileToAzure:
 
 
 uploadFile = UploadFileToAzure()
-path = r'/Users/sunke/Desktop/test/xml'
+path = r'./test/xml'
 xmlLists = os.listdir(path)
 for xml in xmlLists:
     pathxml = os.path.join(path, xml)
