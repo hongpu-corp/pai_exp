@@ -6,7 +6,7 @@ class UploadFileToAzure:
     def azure_store_image_from_stream(self, img_name, file_stream):
         BlockBlobService = self.connect_azure()
         Container_name = "open-pai"
-        path = BlockBlobService.create_blob_from_bytes(Container_name, 'img/'+img_name, file_stream)
+        path = BlockBlobService.create_blob_from_bytes(Container_name, 'test/img/'+img_name, file_stream)
         print("Upload success!")
         return path
 
