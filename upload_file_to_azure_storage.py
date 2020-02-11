@@ -3,9 +3,10 @@ import azure
 from azure.storage.blob import BlockBlobService, PublicAccess
 
 # local_path为文件的句柄
-def upload_res_to_azure(container_name, path, local_path):
+def upload_res(path, local_path):
     BlockBlobService = connect_azure()
-    path = BlockBlobService.create_blob_from_stream(container_name, path, local_path)
+    Container_name = "open-pai"
+    path = BlockBlobService.create_blob_from_stream(Container_name, path, local_path)
     print("Upload success!")
     return path
 
@@ -16,4 +17,4 @@ def connect_azure():
     return BlockBlobService
 
 with open('example.jpg', 'rb') as local_path:
-    upload_res_to_azure('/img/test.jpg', local_path)
+    upload_res('/img/test.jpg', local_path)
